@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+    {% block title %} Список изображений {% endblock %}
+
+    {% block content %}
+ 
+
+    <div class="container mt-4">
+    {% for photo in photos %}
+      <a href="{{photo_detail}}"><img src="{{photo.image.url}}" class="img-fluid rounded shadow" width="200" height="400" alt=""></a>
+    {% endfor %}
+    </div>
+
+    {% endblock %}
+
+
