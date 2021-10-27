@@ -3,11 +3,13 @@
     {% block title %} Список изображений {% endblock %}
 
     {% block content %}
- 
-
+ <head>
+    <a href="{% url 'photo_form' %}" class="btn btn-primary">Создать новое</a>
+ </head>
+    
     <div class="container mt-4">
     {% for photo in photos %}
-      <a href="{{photo_detail}}"><img src="{{photo.image.url}}" class="img-fluid rounded shadow" width="200" height="400" alt=""></a>
+      <a href="{% url 'photo_detail' photo.id  %}"><img src="{{photo.image.url}}" class="img-fluid rounded shadow" width="200" height="400" alt=""></a>
     {% endfor %}
     </div>
 

@@ -1,7 +1,7 @@
 from django.http import request
 from django.shortcuts import get_object_or_404, render, redirect, HttpResponseRedirect
 from .models import Photo
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
 
 
@@ -11,3 +11,9 @@ class PhotoListView(ListView):
 
 class PhotoDetailView(DetailView):
     model = Photo
+    context_object_name = 'photo'
+
+class PhotoCreateView(CreateView):
+    model = Photo
+    context_object_name = 'photo'
+    fields = '__all__'
